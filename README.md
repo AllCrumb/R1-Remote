@@ -1,5 +1,7 @@
 # R1 Remote
 
+**[Русская версия](docs/README.ru.md)** · [Installation](docs/INSTALLATION.md) · [Safety and limitations](docs/SAFETY.md) · [1.3.0 RC release notes](docs/RELEASE_NOTES_1.3.0_RC.md)
+
 **Unofficial Windows 11 controller for the Even Realities R1 smart ring.**
 
 R1 Remote connects the ring directly to Windows using Bluetooth Low Energy. It supports ring-gesture scrolling and experimental configurable controls. A phone or Even G2 glasses are not required during Windows control.
