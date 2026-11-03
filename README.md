@@ -12,7 +12,7 @@ R1 Remote connects the R1 ring to a Windows PC over Bluetooth Low Energy. Swipe 
 
 Scrolling and reconnecting after a temporary loss of Bluetooth range work on the Windows 11/R1 setup tested so far. The application keeps trying to reconnect instead of turning off control after several timeouts. Testing with other rings and adapters, plus installation and rollback checks, is still in progress.
 
-This GitHub repository currently contains documentation only. **The RC installer is not available on GitHub Releases yet.** Avoid third-party downloads.
+**[Download R1 Remote 1.3.0 RC1](https://github.com/AllCrumb/R1-Remote/releases/tag/v1.3.0-rc.1)** from GitHub Releases. The installer is unsigned; verify its SHA-256 before running it.
 
 ## Requirements
 
@@ -23,7 +23,7 @@ This GitHub repository currently contains documentation only. **The RC installer
 ## Important limitations
 
 - The ring may need to disconnect from G2 while Windows control is active.
-- Device-specific pairing details may need to be configured. Unverified G2 addresses must not be treated as factory configuration.
+- For first-time G2 setup, copy both Bluetooth MAC addresses from the official Even mobile app: **Glasses info → Bluetooth MAC**. Enter them in the same top-to-bottom order in R1 Remote. See [installation instructions](docs/INSTALLATION.md#finding-the-two-g2-bluetooth-mac-addresses). These values are not a verified readout of the ring's factory target storage.
 - Windows control remains off until you enable it in the application.
 - After manual confirmation, a recovery operation may change the ring's connection targets and interrupt its G2 connection. There is no automatic target restore on exit.
 - Out-of-range reconnection uses C1/GATT retries without additional target writes.
