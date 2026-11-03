@@ -1,25 +1,25 @@
-# R1 Remote 1.3.0 RC — Release Notes (Draft)
+# R1 Remote 1.3.0 RC — Release notes
 
-**Status:** Preview / Release Candidate — **not GA**.
-
-**Publication status:** Documentation draft only. **No public release asset or tag has been published from this repository.**
+**Status:** Release Candidate (test build), not GA. No installer is available on GitHub Releases yet.
 
 ## Highlights
 
 - Windows 11 control via Even Realities R1 Bluetooth LE connection.
-- Ring gesture-based scrolling and experimental customizable actions.
+- Ring gesture-based scrolling and configurable actions.
+- Automatic C1/GATT reconnect after the ring goes out of Bluetooth range. After five failed connections, further attempts are spaced about 10 seconds apart; Windows control remains enabled.
 - Native Windows interface with selected-ring connection flow.
 - RU / EN / FR / DE interface support.
-- Safer first launch: control starts Disabled until user action.
+- Windows control stays disabled until explicitly enabled in the app.
+- Recovery after repeated C1 role timeouts can make one C2 target write per process, only after manual confirmation. The app does not automatically restore G2 targets on exit.
 - Historical connection journals no longer force a G2 restore workflow or block basic application file maintenance.
 - No mandatory automatic writing of saved G2 targets during normal shutdown.
 - The installer icon was adjusted to match the main R1 Remote application icon.
 
 ## Validation so far
 
-The project operator reported successful Windows scrolling and return to Even G2 without forced recovery on one physical setup. Windows CI builds and isolated source/self-tests passed for the installer candidate, including icon resource checks.
+Scrolling and reconnection after temporary Bluetooth loss work with an R1 on the Windows 11 system tested so far. Return to G2 has also worked in earlier testing, but repeated switching on this exact RC still needs checking. The Windows build passed 33 native tests, installer compilation, archive checks and independent SHA-256 verification.
 
-**These tests do not establish general device compatibility, full installer update/rollback acceptance or signed release provenance.**
+**This is not a compatibility test across different rings, firmware versions or Bluetooth adapters.**
 
 ## Known limitations
 
@@ -32,9 +32,13 @@ The project operator reported successful Windows scrolling and return to Even G2
 
 ## Installer and SHA-256
 
-The final public asset must be attached **only after a separate release approval**. Its exact version, immutable source revision, size and SHA-256 must be independently verified and listed here when released.
+Current tested candidate (not yet uploaded to GitHub):
 
-**Do not treat development CI artifacts as an official public release.**
+- Installer: `R1Remote-Setup-1.3.0-Clean-RC.exe`
+- Installer SHA-256: `7AEEEB5B0F5E74614B1085D32D66E7110C1632D116812C0FB06A585009594599`
+- Application SHA-256: `AA2507681C296F96FACA0BFEEF70579721BDC8B77CFEF65EEF986966E1D7DDD3`
+
+These checksums identify this specific build; they are not download links. Any newer build needs its own checksum.
 
 ## Disclaimer
 
