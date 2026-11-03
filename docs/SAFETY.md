@@ -9,8 +9,8 @@ R1 Remote uses an unofficial, reverse-engineered Bluetooth LE integration with t
 - The application does not automatically restore G2 targets on exit. Reconnecting to G2 worked during testing with one ring, but it has not been checked with every firmware version.
 - After you confirm enabling control, a recovery attempt may write connection targets once if C1 role setup times out twice. This can break the G2 connection.
 - When the ring is out of range, Windows reconnection retries use C1/GATT; they do not require another target write.
-- Manual G2 Bluetooth addresses are supplied by the user; their format can be checked, but they are not a verified readout of original device NVM.
-- An incorrect address, wrong order or wrong ring/device binding can prevent a successful reconnection.
+- Read both G2 Bluetooth MAC addresses from the official **Even mobile app → Glasses info → Bluetooth MAC** screen. Enter the first displayed line as G2 #1 and the second as G2 #2. The two lines are not labeled left/right, and their display order does not establish the original target-slot order in the ring's NVM. See [installation](INSTALLATION.md#finding-the-two-g2-bluetooth-mac-addresses).
+- An incorrect address, swapped order or wrong ring/device binding can prevent a successful reconnection. Never use an R1 ring MAC, a phone MAC or the glasses' serial number as a G2 target address.
 
 ## Do not
 
