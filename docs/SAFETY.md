@@ -6,7 +6,9 @@ R1 Remote uses an unofficial, reverse-engineered Bluetooth LE integration with t
 
 - The ring can have an active connection to G2. A Windows control session may require leaving that connection.
 - Historical application journals such as `targets=open` do **not** prove the ring is currently disconnected from G2.
-- The normal application does not require an automatic G2 target-restore operation on exit. The operator confirmed natural reconnection on one tested hardware setup, **not on every firmware revision**.
+- The application does not automatically restore G2 targets on exit. Reconnecting to G2 worked during testing with one ring, but it has not been checked with every firmware version.
+- After you confirm enabling control, a recovery attempt may write connection targets once if C1 role setup times out twice. This can break the G2 connection.
+- When the ring is out of range, Windows reconnection retries use C1/GATT; they do not require another target write.
 - Manual G2 Bluetooth addresses are supplied by the user; their format can be checked, but they are not a verified readout of original device NVM.
 - An incorrect address, wrong order or wrong ring/device binding can prevent a successful reconnection.
 
@@ -19,10 +21,10 @@ R1 Remote uses an unofficial, reverse-engineered Bluetooth LE integration with t
 
 ## Release Candidate limitations
 
-- Hardware coverage currently includes a limited operator-tested setup, not a representative range of rings and firmware versions.
+- Testing so far covers one R1/Windows setup, not a representative range of rings and firmware versions.
 - Negative cases such as lost pairing, an interrupted connection or interrupted target writes are not fully qualified.
 - Installation, in-place updates, rollback and uninstall across a range of existing builds remain under qualification.
-- The distribution is not Authenticode-signed; Windows may warn before execution.
+- The RC installer is not Authenticode-signed; Windows may show a security warning.
 - Advanced application-specific profiles and input mapping may be experimental.
 
 ## Security and diagnostics
