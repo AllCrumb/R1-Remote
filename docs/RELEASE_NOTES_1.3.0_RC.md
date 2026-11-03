@@ -1,6 +1,6 @@
 # R1 Remote 1.3.0 RC — Release notes
 
-**Status:** Release Candidate (test build), not GA. No installer is available on GitHub Releases yet.
+**Status:** Published **1.3.0 RC1 pre-release**, not GA. [Download the installer](https://github.com/AllCrumb/R1-Remote/releases/tag/v1.3.0-rc.1).
 
 ## Highlights
 
@@ -32,13 +32,13 @@ Scrolling and reconnection after temporary Bluetooth loss work with an R1 on the
 
 ## Installer and SHA-256
 
-Current tested candidate (not yet uploaded to GitHub):
+Published RC1 Windows installer (independently verified against the CI build):
 
-- Installer: `R1Remote-Setup-1.3.0-Clean-RC.exe`
+- Installer: `R1Remote-Setup-1.3.0-RC.exe`
 - Installer SHA-256: `7AEEEB5B0F5E74614B1085D32D66E7110C1632D116812C0FB06A585009594599`
 - Application SHA-256: `AA2507681C296F96FACA0BFEEF70579721BDC8B77CFEF65EEF986966E1D7DDD3`
 
-These checksums identify this specific build; they are not download links. Any newer build needs its own checksum.
+These checksums identify this exact binary. A renamed installer keeps the same SHA-256, but the filename listed in `SHA256SUMS.txt` must match the attached file. Any newer build needs its own checksum.
 
 ## Disclaimer
 
